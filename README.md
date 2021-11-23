@@ -2,7 +2,7 @@
 
 <h1 align="center">Dynamic Flow Progress Component</h1>
 
-<p align="center">This package contains a Lightning component</p>
+<p align="center">Display 6 different kinds of progress indicators on your Flow screens, to provide your users with easy-to-understand, guided screen flows.</p>
 
 <!-- Sections below are Optional -->
 
@@ -11,6 +11,7 @@
 ## Description
 
 This component can be used on a Flow screen to indicate the steps in a flow and the progress made by the user:
+
 * 6 different indicator types (Vertical Progress, Horizontal Progress, Progress Bar, Vertical Navigation Menu, Progress Ring, and Path)
 * Override completion % value with your own flow variable (Progress Bar and Progress Ring only)
 * Additionally, it uses Custom Labels for display and assistive text, making it friendly for translation into other languages.
@@ -54,7 +55,24 @@ Text and assistive text that displays in the component uses Custom Labels so tha
 
 Once you have enabled Translation Workbench and added supported languages in your org, you can create translations that will override the default English values (from Setup, visit Custom Labels; see [this help article](https://help.salesforce.com/s/articleView?id=sf.cl_translate_edit.htm&type=5)).
 
-### FAQ
+## Release History
+
+1.0 Initial release (22 Nov 2021)
+
+## Maintainers
+
+[Mitch Lynch/egyptguy](https://github.com/egyptguy)
+
+## References
+
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Choose an Open Source License](https://choosealicense.com)
+* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* [Badges Reference](https://github.com/badges/shields/blob/master/README.md)
+* [List of tags to use for repositories](https://salesforce.quip.com/zIyyAzGYRaWu)
+* [Email template to get approval for making repo public](https://salesforce.quip.com/8j1jAKTHlk6Q)
+
+## FAQ
 
 **_Q: Is there an easier way to create a reusable list of steps to use in the Comma-Separated List of Steps property? It’s tedious to have to enter the list on every screen where I’m using the component._**
 A: Yes! Create a [Constant](https://help.salesforce.com/s/articleView?id=sf.flow_ref_resources_constant.htm&type=5) resource (Type = Text) that contains your comma-separated list of steps. Then, just reference that constant in this property every time you use the component. Now, when there are changes to your list, you only have to manage the value of your constant and it takes effect across all instances of the component.
@@ -64,18 +82,3 @@ A: The current release of this component focuses on delivering a component that�
 
 **_Q: Can I easily customize translate text that's part of the component?_**
 A: Yes! See the section (above) about the Custom Labels available for translation.
-
-## Release History
-
-1.0 Initial release (22 Nov 2021)
-
-## Maintainers
-[Mitch Lynch/egyptguy](https://github.com/egyptguy)
-
-## References
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Choose an Open Source License](https://choosealicense.com)
-* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-* [Badges Reference](https://github.com/badges/shields/blob/master/README.md)
-* [List of tags to use for repositories](https://salesforce.quip.com/zIyyAzGYRaWu)
-* [Email template to get approval for making repo public](https://salesforce.quip.com/8j1jAKTHlk6Q)

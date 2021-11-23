@@ -29,9 +29,7 @@ SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED
 
 | Attribute     						| Description   |
 | ------------- 						|:-------------:|
-| **Comma-Separated List of Steps** 		| Add the full list of steps that will make up the indicator.
-
-To save yourself from accurately configuring this list across multiple screens, create a text *[constant](https://help.salesforce.com/s/articleView?id=sf.flow_ref_resources_constant.htm&type=5)* with that comma-separated list of steps in it, and then reference that constant in this property. Now, when there are changes to your list of steps, you only have to update the value of your constant - not each and every instance of this component. |
+| **Comma-Separated List of Steps** 		| Add the full list of steps that will make up the indicator.<br><br>To save yourself from accurately configuring this list across multiple screens, create a text *[constant](https://help.salesforce.com/s/articleView?id=sf.flow_ref_resources_constant.htm&type=5)* with that comma-separated list of steps in it, and then reference that constant in this property. Now, when there are changes to your list of steps, you only have to update the value of your constant - not each and every instance of this component. |
 
 | **Current Step**      					| Add the value of the current step. Make sure this value exactly matches the spelling of the step found in the comma-separated list.      |
 

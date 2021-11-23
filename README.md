@@ -9,6 +9,9 @@
 ---
 
 ## Description
+
+[logo]: https://github.com/SFDC-Assets/DynamicFlowProgress/blob/main/images/dflowp_video01.gif "Dynamic Flow Progress Screenshot"
+
 This component can be used on a Flow screen to indicate the steps in a flow and the progress made by the user:
 * 6 different indicator types (Vertical Progress, Horizontal Progress, Progress Bar, Vertical Navigation Menu, Progress Ring, and Path)
 * Override completion % value with your own flow variable (Progress Bar and Progress Ring only)

@@ -2,6 +2,8 @@
 
 <h1 align="center">Dynamic Flow Progress Component</h1>
 
+<p align="center">This package contains a Lightning component</p>
+
 <!-- Sections below are Optional -->
 
 ---
@@ -20,6 +22,7 @@ This component can be used on a Flow screen to indicate the steps in a flow and 
 2. Add the Dynamic Flow Progress component to a screen element.
 3. Configure the component’s properties (see below).
 4. Rinse and repeat on other screens in your flow.
+5. View the "Dynamic Flow Progress - Sample" flow for configuration examples.
 
 ## Component Properties
 

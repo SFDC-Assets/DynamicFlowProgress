@@ -10,12 +10,12 @@
 
 ## Description
 
-![video01](images/dflowp_video01.gif)
-
 This component can be used on a Flow screen to indicate the steps in a flow and the progress made by the user:
 * 6 different indicator types (Vertical Progress, Horizontal Progress, Progress Bar, Vertical Navigation Menu, Progress Ring, and Path)
 * Override completion % value with your own flow variable (Progress Bar and Progress Ring only)
 * Additionally, it uses Custom Labels for display and assistive text, making it friendly for translation into other languages.
+
+![video01](images/dflowp_video01.gif)
 
 ## Install & Setup Instructions
 

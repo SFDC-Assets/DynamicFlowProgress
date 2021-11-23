@@ -66,7 +66,7 @@ A: Yes! See the section (above) about the Custom Labels available for translatio
 
 ## Maintainers
 
-[Mitch Lynch/egyptguy](https://github.com/egyptguy)
+[Mitch Lynch / egyptguy](https://github.com/egyptguy)
 
 ## References
 

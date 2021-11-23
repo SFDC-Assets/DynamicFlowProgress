@@ -45,7 +45,7 @@ Text and assistive text that displays in the component uses Custom Labels so tha
 
 * **DFP_Complete** – In the Bar indicator type, this is the text that follows the current % (e.g. 20% Complete). It is also used for assistive text to designate previously completed steps in the indicator.
 * **DFP_Current** – used for assistive text only to designate the current step in the indicator.
-* **DFP_Upcoming** – used for assistive text only to designate an upcoming step in the indicator.<br><br>Once you have enabled Translation Workbench and added supported languages in your org, you can create translations that will override the default English values (from Setup, visit Custom Labels; see this help article).
+* **DFP_Upcoming** – used for assistive text only to designate an upcoming step in the indicator.
 
 Once you have enabled Translation Workbench and added supported languages in your org, you can create translations that will override the default English values (from Setup, visit Custom Labels; see [this help article](https://help.salesforce.com/s/articleView?id=sf.cl_translate_edit.htm&type=5)).
 

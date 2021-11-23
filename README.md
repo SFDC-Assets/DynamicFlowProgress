@@ -20,7 +20,7 @@ SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED
 
 ## Install & Setup Instructions
 
-1. Install from the AppExchange:  [listing URL here]
+1. Install from the AppExchange:  **[https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAc](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAc)**
 2. Add the Dynamic Flow Progress component to a screen element.
 3. Configure the component’s properties (see below).
 4. Rinse and repeat on other screens in your flow.
@@ -47,7 +47,7 @@ To save yourself from accurately configuring this list across multiple screens, 
 
 ## Release History
 
-A list of updates made over time after initial release. 
+1.0 Initial release (22 Nov 2021)
 
 ## Maintainers
 [Mitch Lynch/egyptguy](https://github.com/egyptguy)
@@ -56,7 +56,6 @@ A list of updates made over time after initial release.
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Choose an Open Source License](https://choosealicense.com)
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-* [RecordIt GIF Creator](https://recordit.co/)
 * [Badges Reference](https://github.com/badges/shields/blob/master/README.md)
 * [List of tags to use for repositories](https://salesforce.quip.com/zIyyAzGYRaWu)
 * [Email template to get approval for making repo public](https://salesforce.quip.com/8j1jAKTHlk6Q)

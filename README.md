@@ -49,6 +49,17 @@ Text and assistive text that displays in the component uses Custom Labels so tha
 
 Once you have enabled Translation Workbench and added supported languages in your org, you can create translations that will override the default English values (from Setup, visit Custom Labels; see [this help article](https://help.salesforce.com/s/articleView?id=sf.cl_translate_edit.htm&type=5)).
 
+### FAQ
+
+**_Q: Is there an easier way to create a reusable list of steps to use in the Comma-Separated List of Steps property? It’s tedious to have to enter the list on every screen where I’m using the component._**
+A: Yes! Create a [Constant](https://help.salesforce.com/s/articleView?id=sf.flow_ref_resources_constant.htm&type=5) resource (Type = Text) that contains your comma-separated list of steps. Then, just reference that constant in this property every time you use the component. Now, when there are changes to your list, you only have to manage the value of your constant and it takes effect across all instances of the component.
+
+**_Q: Can I easily customize the colors/branding?_**
+A: The current release of this component focuses on delivering a component that’s on-brand for the Salesforce Lightning Design System (SLDS).
+
+**_Q: Can I easily customize translate text that's part of the component?_**
+A: Yes! See the section (above) about the Custom Labels available for translation.
+
 ## Disclaimer
 
 THIS APPLICATION IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL OR SIMILAR DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS APPLICATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -71,14 +82,3 @@ SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED
 * [Badges Reference](https://github.com/badges/shields/blob/master/README.md)
 * [List of tags to use for repositories](https://salesforce.quip.com/zIyyAzGYRaWu)
 * [Email template to get approval for making repo public](https://salesforce.quip.com/8j1jAKTHlk6Q)
-
-## FAQ
-
-**_Q: Is there an easier way to create a reusable list of steps to use in the Comma-Separated List of Steps property? It’s tedious to have to enter the list on every screen where I’m using the component._**
-A: Yes! Create a [Constant](https://help.salesforce.com/s/articleView?id=sf.flow_ref_resources_constant.htm&type=5) resource (Type = Text) that contains your comma-separated list of steps. Then, just reference that constant in this property every time you use the component. Now, when there are changes to your list, you only have to manage the value of your constant and it takes effect across all instances of the component.
-
-**_Q: Can I easily customize the colors/branding?_**
-A: The current release of this component focuses on delivering a component that’s on-brand for the Salesforce Lightning Design System (SLDS).
-
-**_Q: Can I easily customize translate text that's part of the component?_**
-A: Yes! See the section (above) about the Custom Labels available for translation.

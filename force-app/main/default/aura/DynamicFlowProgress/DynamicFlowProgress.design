@@ -1,0 +1,6 @@
+<design:component label="Dynamic Flow Progress" >
+    <design:attribute name="indicatorType" label="Indicator Type" datasource="Vertical,Horizontal,Path,Bar,VertNav,Ring" description="Vertical, Horizontal, Path, Bar, NavMenu, or Ring." />
+    <design:attribute name="stepList" label="Comma-Separated List of Steps" description="Example: Step 1,Step 2,Step 3. Recommend storing this in a constant." />
+    <design:attribute name="currentStep" label="Current Step" description="Example: Step 1" />
+    <design:attribute name="currentStepPercentage" label="Current Step Percentage Completion (Optional)" description="Optional. Must be integer between 0 and 100. Leave blank unless you want to override the auto-calculated percentage. Only affects Ring and Bar indicator types." />
+</design:component>

@@ -12,13 +12,15 @@
 
 This component can be used on a Flow screen to indicate the steps in a flow and the progress made by the user:
 
-* 6 different indicator types (Vertical Progress, Horizontal Progress, Progress Bar, Vertical Navigation Menu, Progress Ring, and Path)
+* 6 different indicator types (see [below](https://github.com/SFDC-Assets/DynamicFlowProgress#indicator-types) for list and screenshots)
 * Override completion % value with your own flow variable (Progress Bar and Progress Ring only)
 * Additionally, it uses Custom Labels for display and assistive text, making it friendly for translation into other languages.
 
 ![video01](images/dflowp_video01.gif)
 
 ### Indicator Types
+
+This single component can display one of six indicator types:
 
 | Indicator Type | Screenshot |
 | --- | --- |

@@ -78,7 +78,7 @@ A: Yes! See the section (above) about the Custom Labels available for translatio
 
 ## Release History
 
-1.0 Initial release (22 Nov 2021)
+1.2 Initial release (22 Nov 2021)
 
 ## Maintainers
 

@@ -18,6 +18,17 @@ This component can be used on a Flow screen to indicate the steps in a flow and 
 
 ![video01](images/dflowp_video01.gif)
 
+### Indicator Types
+
+| Indicator Type | Screenshot |
+| --- | --- |
+| **“Vertical”**<br><br>To use, enter `Vertical` as your Indicator Type.<br><br>Based on the vertical variant of the [SLDS Progress Indicator component blueprint](https://www.lightningdesignsystem.com/components/progress-indicator/#Vertical). | Image goes here |
+| **“Horizontal”**<br><br>To use, enter `Horizontal` as your Indicator Type.<br><br>Based on the base variant of the [SLDS Progress Indicator component blueprint](https://www.lightningdesignsystem.com/components/progress-indicator/#Base). | Image goes here |
+| **“Bar”**<br><br>To use, enter `Bar` as your Indicator Type.<br><br>Based on the descriptive variant of the [SLDS Progress Bar component blueprint](https://www.lightningdesignsystem.com/components/progress-bar/#site-main-content).<br><br>The percentage is auto-calculated based on the current number of completed steps, but it can be overridden if you want to show a different number. See the Setup section above. | Image goes here |
+| **“Ring”**<br><br>To use, enter `Ring` as your Indicator Type.<br><br>A generic progress ring that mimics SLDS styles.<br><br>The percentage is auto-calculated based on the current number of completed steps, but it can be overridden if you want to show a different number. See the Setup section above. | Image goes here |
+| **“Path”**<br><br>To use, enter `Path` as your Indicator Type.<br><br>Based on the traditional [SLDS Path component blueprint](https://www.lightningdesignsystem.com/components/path/#site-main-content). | Image goes here |
+| **“VertNav”**<br><br>To use, enter `VertNav` as your Indicator Type.<br><br>Based on the list variant of the [SLDS Vertical Navigation component blueprint](https://www.lightningdesignsystem.com/components/vertical-navigation/#site-main-content). | Image goes here |
+
 ## Install & Setup Instructions
 
 **Please see the [Disclaimer](https://github.com/SFDC-Assets/DynamicFlowProgress#disclaimer)** (below)

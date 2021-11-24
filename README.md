@@ -35,7 +35,7 @@ This single component can display one of six indicator types:
 
 **Please see the [Disclaimer](https://github.com/SFDC-Assets/DynamicFlowProgress#disclaimer)** (below)
 
-1. Install from the AppExchange:  **[https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAc](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAc)**
+1. Install from the AppExchange:  **[https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAm&isdtp=p1](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAm&isdtp=p1)**
 2. Add the Dynamic Flow Progress component to a screen element.
 3. Configure the component’s properties (see below).
 4. Rinse and repeat on other screens in your flow.

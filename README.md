@@ -52,12 +52,15 @@ Once you have enabled Translation Workbench and added supported languages in you
 ### FAQ
 
 **_Q: Is there an easier way to create a reusable list of steps to use in the Comma-Separated List of Steps property? It’s tedious to have to enter the list on every screen where I’m using the component._**
+
 A: Yes! Create a [Constant](https://help.salesforce.com/s/articleView?id=sf.flow_ref_resources_constant.htm&type=5) resource (Type = Text) that contains your comma-separated list of steps. Then, just reference that constant in this property every time you use the component. Now, when there are changes to your list, you only have to manage the value of your constant and it takes effect across all instances of the component.
 
 **_Q: Can I easily customize the colors/branding?_**
+
 A: The current release of this component focuses on delivering a component that’s on-brand for the Salesforce Lightning Design System (SLDS).
 
 **_Q: Can I easily customize translate text that's part of the component?_**
+
 A: Yes! See the section (above) about the Custom Labels available for translation.
 
 ## Release History

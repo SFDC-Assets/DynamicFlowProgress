@@ -2,7 +2,7 @@
 
 <h1 align="center">Dynamic Flow Progress Component</h1>
 
-<p align="center">Display 6 different kinds of progress indicators on your Flow screens, to provide your users with easy-to-understand, guided screen flows.</p>
+<p align="center">This package includes an Aura component that displays 6 different kinds of progress indicators on your Flow screens, to provide your users with easy-to-understand, guided screen flows.</p>
 
 <!-- Sections below are Optional -->
 
@@ -67,15 +67,6 @@ A: Yes! See the section (above) about the Custom Labels available for translatio
 ## Maintainers
 
 [Mitch Lynch / egyptguy](https://github.com/egyptguy)
-
-## References
-
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Choose an Open Source License](https://choosealicense.com)
-* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-* [Badges Reference](https://github.com/badges/shields/blob/master/README.md)
-* [List of tags to use for repositories](https://salesforce.quip.com/zIyyAzGYRaWu)
-* [Email template to get approval for making repo public](https://salesforce.quip.com/8j1jAKTHlk6Q)
 
 ## Disclaimer
 

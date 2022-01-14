@@ -2,6 +2,8 @@
 
 <h1 align="center">Dynamic Flow Progress Component</h1>
 
+<p align="center"><strong><em>...COMING SOON...</em></strong></p>
+
 <p align="center">This package includes an Aura component that displays 6 different kinds of progress indicators on your Flow screens, to provide your users with easy-to-understand, guided screen flows.</p>
 
 <!-- Sections below are Optional -->

@@ -82,6 +82,7 @@ A: Yes! See the section (above) about the Custom Labels available for translatio
 ## Caveats
 * <strong>Not intended for use with screen flows embedded in Visualforce</strong>. Not even tested. Users have reported issues by using the Aura version this way, so it is not at all recommended.
 * <strong>The Aura version is deprecated as of v2.0 and will no longer be supported</strong>, even if it remains in the package to support existing use. Replace it with the new LWC version of the component in your existing flows to receive the best experience. As an Aura component, you will not be able to use it in flows presented in LWR Experience Cloud templates (please see Salesforce documentation for [Considerations for Using Flows in LWR](https://help.salesforce.com/s/articleView?id=sf.networks_lwr_flow_limitations.htm&type=5)).
+* The Ring indicator type is known to be finnicky when it exists on a Lightning or Experience page where more than one instance of the Ring indicator is present. Its UI currently depends on overriding styles at a root level, so multiple instances of a Ring on the same page will display identically, even when they are embedded in separate screen flows on the page.
 
 ## Release History
 

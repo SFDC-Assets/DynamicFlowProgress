@@ -2,7 +2,9 @@
 
 <h1 align="center">Dynamic Flow Progress Component</h1>
 
-<p align="center">This package includes an Aura component that displays 6 different kinds of progress indicators on your Flow screens, to provide your users with easy-to-understand, guided screen flows.</p>
+<p align="center"><strong>Updated: Release 2.0 went live on 20 Sep 2022</strong> (see release notes below)</p>
+
+<p align="center">This package includes an LWC component that displays 6 different kinds of progress indicators on your Flow screens, to provide your users with easy-to-understand, guided screen flows.</p>
 
 <!-- Sections below are Optional -->
 
@@ -12,6 +14,7 @@
 
 This component can be used on a Flow screen to indicate the steps in a flow and the progress made by the user:
 
+* New LWC version just in time for Dreamforce '22!
 * 6 different indicator types (see [below](https://github.com/SFDC-Assets/DynamicFlowProgress#indicator-types) for list and screenshots)
 * Override completion % value with your own flow variable (Progress Bar and Progress Ring only)
 * Additionally, it uses Custom Labels for display and assistive text, making it friendly for translation into other languages.
@@ -35,11 +38,11 @@ This single component can display one of six indicator types:
 
 **Please see the [Disclaimer](https://github.com/SFDC-Assets/DynamicFlowProgress#disclaimer)** (below)
 
-1. Install from the AppExchange:  **[https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAm](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000007zKAm)**
+1. Install from the AppExchange:  **[https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000Pt7yzEAB](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000Pt7yzEAB)**
 2. Add the Dynamic Flow Progress component to a screen element.
 3. Configure the component’s properties (see below).
 4. Rinse and repeat on other screens in your flow.
-5. View the "Dynamic Flow Progress - Sample" flow for configuration examples.
+5. View the "Dynamic Flow Progress LWC - Sampler" flow for configuration examples.
 
 ### Component Properties
 
@@ -54,7 +57,7 @@ When you add this component to a Flow screen, there are a few properties to conf
 
 ### Custom Labels Available for Translation
 
-Text and assistive text that displays in the component uses Custom Labels so that you can translate it into languages other than English. I decided not to include the translations themselves because, well, I’d only butcher some very fine linguistic traditions:
+Text and assistive text that displays in the component uses Custom Labels so that you can translate it into languages other than English. I include the translations themselves but my apologies if I've butchered your mother tongue (start a [discussion](https://github.com/SFDC-Assets/DynamicFlowProgress/discussions) if you have better translations for these labels or if you want me to add support for your language):
 
 * **DFP_Complete** – In the Bar indicator type, this is the text that follows the current % (e.g. 20% Complete). It is also used for assistive text to designate previously completed steps in the indicator.
 * **DFP_Current** – used for assistive text only to designate the current step in the indicator.
@@ -62,7 +65,7 @@ Text and assistive text that displays in the component uses Custom Labels so tha
 
 Once you have enabled Translation Workbench and added supported languages in your org, you can create translations that will override the default English values (from Setup, visit Custom Labels; see [this help article](https://help.salesforce.com/s/articleView?id=sf.cl_translate_edit.htm&type=5)).
 
-### FAQ
+## FAQs
 
 **_Q: Is there an easier way to create a reusable list of steps to use in the Comma-Separated List of Steps property? It’s tedious to have to enter the list on every screen where I’m using the component._**
 
@@ -70,23 +73,35 @@ A: Yes! Create a [Constant](https://help.salesforce.com/s/articleView?id=sf.flow
 
 **_Q: Can I easily customize the colors/branding?_**
 
-A: The current release of this component focuses on delivering a component that’s on-brand for the Salesforce Lightning Design System (SLDS).
+A: This solution focuses on delivering a component that’s on-brand for the Salesforce Lightning Design System (SLDS). As such, the component is mildly influenced by branding/theming when deployed in an Experience Cloud site. You may use the source code in this repository to develop your own branded progress indicators or CSS overrides in Experience Builder to affect the coloring/branding.
 
 **_Q: Can I easily customize translate text that's part of the component?_**
 
 A: Yes! See the section (above) about the Custom Labels available for translation.
 
+## Caveats
+* <strong>Not intended for use with screen flows embedded in Visualforce</strong>. Not even tested. Users have reported issues by using the Aura version this way, so it is not at all recommended.
+* <strong>The Aura version is deprecated as of v2.0 and will no longer be supported</strong>, even if it remains in the package to support existing use. Replace it with the new LWC version of the component in your existing flows to receive the best experience. As an Aura component, you will not be able to use it in flows presented in LWR Experience Cloud templates (please see Salesforce documentation for [Considerations for Using Flows in LWR](https://help.salesforce.com/s/articleView?id=sf.networks_lwr_flow_limitations.htm&type=5)).
+
 ## Release History
 
-1.2 Initial release (24 Nov 2021)
+<strong>2.0 Dreamforce Release (20 Sep 2022)</strong>
+* Dynamic Flow Progress is now available as an LWC with proven support for internal and external facing screen Flows.  The new LWC version is meant to replace the original Aura component.
+* New LWC version has been fully tested in standard Aura and LWR Experience Cloud templates ([Issue #3](https://github.com/SFDC-Assets/DynamicFlowProgress/issues/3)) and resolves [Issue #5](https://github.com/SFDC-Assets/DynamicFlowProgress/issues/5).
+* Now includes the missing Translation metadata to provide the rough label translations for English, French, German, Italian, and Spanish (if you are a native speaker and have better translations for the custom labels, or want me to add support for your language, please start a [discussion](https://github.com/SFDC-Assets/DynamicFlowProgress/discussions)).
+* Legacy Aura version has been left in the package to support existing use, but is considered deprecated as of this release. It is has been relabeled "zDynamic Flow Progress (Old)" to reduce confusion when viewing components in Flow Builder. Final updates before deprecation: received the fix to [Issue #5](https://github.com/SFDC-Assets/DynamicFlowProgress/issues/5) and it was tested in standard Aura and LWR Experience Cloud templates to help avoid [Issue #3](https://github.com/SFDC-Assets/DynamicFlowProgress/issues/3).
+
+<strong>1.2 Initial release (24 Nov 2021)</strong> - Initial version of the package published to the AppExchange.
 
 ## Maintainers
 
-[Mitch Lynch / egyptguy](https://github.com/egyptguy)
+<strong>[Mitch Lynch (egyptguy)](https://github.com/egyptguy)</strong>
 
 ## Acknowledgements
 
-Many thanks to [John Meyer / johnsfdemo](https://github.com/johnsfdemo) and the Salesforce Global Public Sector's Platform Blackbelts for their encouragement and feedback on this component!
+v2.0 would not have been possible without my beta testers!  Many thanks to Salesforce's own <strong>[Ruchita Gathani (ruchitagathani)](https://github.com/ruchitagathani), Ibrahim Khokhar, [David Nava (navafit)](https://github.com/navafit), Nicole Peters, Robyn Rowley, and Don Tennant</strong> for their steadfast help in preparing this app for our customers.
+
+Many thanks to <strong>[John Meyer (johnsfdemo)](https://github.com/johnsfdemo)</strong> and the Salesforce Global Public Sector's Platform Blackbelts for their encouragement and feedback on this component!
 
 ## Disclaimer
 

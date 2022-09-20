@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>DFP_Complete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFP Complete</shortDescription>
+        <value>Complete</value>
+    </labels>
+    <labels>
+        <fullName>DFP_Current</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFP Current</shortDescription>
+        <value>Current</value>
+    </labels>
+    <labels>
+        <fullName>DFP_Upcoming</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFP Upcoming</shortDescription>
+        <value>Upcoming</value>
+    </labels>
+</CustomLabels>

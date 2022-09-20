@@ -2,16 +2,19 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>53.0</apiVersion>
     <constants>
-        <description>List of comma-separated steps used to display the Dynamic Flow Progress component in this flow.</description>
-        <name>constantSteps</name>
+        <name>constantPath</name>
         <dataType>String</dataType>
         <value>
             <stringValue>Step 1,Step 2,Step 3,Step 4,Step 5,Step 6</stringValue>
         </value>
     </constants>
-    <description>Sample flow for showcasing the Dynamic Flow Progress component.</description>
+    <description>Flow to test the old Aura version of the component. Use the &quot;Dynamic Flow Progress LWC - Sampler&quot; flow to test the new LWC version.
+
+09/20/2022 - Updated Flow Label to &quot;zDynamic Flow Progress Aura - Sample (Old)&quot; to minimize confusion with the new flow that tests the new LWC version of the component.</description>
+    <environments>Default</environments>
     <interviewLabel>Dynamic Flow Progress - Sample {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Dynamic Flow Progress - Sample</label>
+    <isTemplate>true</isTemplate>
+    <label>zDynamic Flow Progress Aura - Sample (Old)</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -21,7 +24,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -31,20 +34,21 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <runInMode>DefaultMode</runInMode>
     <screens>
         <name>s01</name>
         <label>Step 1</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>244</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
             <targetReference>s02</targetReference>
         </connector>
         <fields>
             <name>title01</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Step 1:  The First Step&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Title of the Screen&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -54,13 +58,13 @@
                 <name>s01_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator01a</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path01a</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -74,19 +78,19 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator01b</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path01b</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>stepList</name>
+                        <value>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputParameters>
                         <name>indicatorType</name>
                         <value>
                             <stringValue>Ring</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>stepList</name>
-                        <value>
-                            <elementReference>constantSteps</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -105,13 +109,13 @@
                 <name>s01_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator01c</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path01f</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -137,17 +141,23 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>text01a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;This is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60); font-size: 18px;&quot;&gt;Step 1 is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60); font-size: 16px;&quot;&gt;This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>indicator01d</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path01c</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Horizontal</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -155,8 +165,8 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator01e</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path01d</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>indicatorType</name>
@@ -167,7 +177,7 @@
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -175,13 +185,13 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator01f</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path01e</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -203,6 +213,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -210,17 +221,17 @@
     <screens>
         <name>s02</name>
         <label>Step 2</label>
-        <locationX>176</locationX>
-        <locationY>278</locationY>
+        <locationX>251</locationX>
+        <locationY>320</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
             <targetReference>s03</targetReference>
         </connector>
         <fields>
             <name>title02</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Step 2:  The Second Step&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Title of the Screen&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -230,19 +241,13 @@
                 <name>s02_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator02a</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path02a</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>Vertical</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -251,24 +256,30 @@
                             <stringValue>Step 2</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Vertical</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator02b</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path02b</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>stepList</name>
+                        <value>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputParameters>
                         <name>indicatorType</name>
                         <value>
                             <stringValue>Ring</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>stepList</name>
-                        <value>
-                            <elementReference>constantSteps</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -293,25 +304,25 @@
                 <name>s02_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator02c</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path02f</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>currentStep</name>
+                        <value>
+                            <stringValue>Step 2</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
                         <name>indicatorType</name>
                         <value>
                             <stringValue>VertNav</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>currentStep</name>
-                        <value>
-                            <stringValue>Step 2</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -331,17 +342,23 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>text02a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;This is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Step 2 is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>indicator02d</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path02c</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Horizontal</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -355,8 +372,8 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator02e</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path02d</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>indicatorType</name>
@@ -367,7 +384,7 @@
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -381,13 +398,13 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator02f</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path02e</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -415,6 +432,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -422,17 +440,17 @@
     <screens>
         <name>s03</name>
         <label>Step 3</label>
-        <locationX>176</locationX>
-        <locationY>398</locationY>
+        <locationX>326</locationX>
+        <locationY>395</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
             <targetReference>s04</targetReference>
         </connector>
         <fields>
             <name>title03</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Step 3:  The Third Step&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Title of the Screen&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -442,19 +460,13 @@
                 <name>s03_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator03a</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path03a</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>Vertical</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -463,24 +475,30 @@
                             <stringValue>Step 3</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Vertical</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator03b</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path03b</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>stepList</name>
+                        <value>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputParameters>
                         <name>indicatorType</name>
                         <value>
                             <stringValue>Ring</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>stepList</name>
-                        <value>
-                            <elementReference>constantSteps</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -505,25 +523,25 @@
                 <name>s03_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator03c</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path03f</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>VertNav</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
                         <name>currentStep</name>
                         <value>
                             <stringValue>Step 3</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>VertNav</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -543,17 +561,23 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>text03a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;This is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Step 3 is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>indicator03d</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path03c</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Horizontal</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -567,8 +591,8 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator03e</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path03d</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>indicatorType</name>
@@ -579,7 +603,7 @@
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -593,13 +617,13 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator03f</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path03e</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -627,6 +651,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -634,17 +659,17 @@
     <screens>
         <name>s04</name>
         <label>Step 4</label>
-        <locationX>176</locationX>
-        <locationY>518</locationY>
+        <locationX>401</locationX>
+        <locationY>470</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
             <targetReference>s05</targetReference>
         </connector>
         <fields>
             <name>title04</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-size: 20px;&quot;&gt;Step 4:  The Fourth Step&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Title of the Screen&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -654,19 +679,13 @@
                 <name>s04_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator04a</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path04a</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>Vertical</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -675,24 +694,30 @@
                             <stringValue>Step 4</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Vertical</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator04b</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path04b</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>stepList</name>
+                        <value>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputParameters>
                         <name>indicatorType</name>
                         <value>
                             <stringValue>Ring</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>stepList</name>
-                        <value>
-                            <elementReference>constantSteps</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -717,25 +742,25 @@
                 <name>s04_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator04c</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path04f</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>VertNav</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
                         <name>currentStep</name>
                         <value>
                             <stringValue>Step 4</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>VertNav</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -755,17 +780,23 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>text04a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;This is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60); font-size: 18px;&quot;&gt;Step 4 is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60); font-size: 16px;&quot;&gt;This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>indicator04d</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path04c</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Horizontal</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -779,8 +810,8 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator04e</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path04d</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>indicatorType</name>
@@ -791,7 +822,7 @@
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -805,13 +836,13 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator04f</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path04e</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -839,6 +870,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -846,17 +878,17 @@
     <screens>
         <name>s05</name>
         <label>Step 5</label>
-        <locationX>176</locationX>
-        <locationY>638</locationY>
+        <locationX>476</locationX>
+        <locationY>545</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
             <targetReference>s06</targetReference>
         </connector>
         <fields>
             <name>title05</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;Step 5:  The Fifth Step&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Title of the Screen&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -866,19 +898,13 @@
                 <name>s05_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator05a</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path05a</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>Vertical</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -887,24 +913,30 @@
                             <stringValue>Step 5</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Vertical</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator05b</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path05b</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>stepList</name>
+                        <value>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputParameters>
                         <name>indicatorType</name>
                         <value>
                             <stringValue>Ring</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>stepList</name>
-                        <value>
-                            <elementReference>constantSteps</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -929,25 +961,25 @@
                 <name>s05_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator05c</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path05f</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>VertNav</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
                         <name>currentStep</name>
                         <value>
                             <stringValue>Step 5</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>VertNav</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -967,17 +999,23 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>text05a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;This is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Step 5 is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>indicator05d</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path05c</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Horizontal</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -991,8 +1029,8 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator05e</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path05d</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>indicatorType</name>
@@ -1003,7 +1041,7 @@
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1017,13 +1055,13 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator05f</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path05e</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1051,6 +1089,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1058,14 +1097,14 @@
     <screens>
         <name>s06</name>
         <label>Step 6</label>
-        <locationX>176</locationX>
-        <locationY>758</locationY>
+        <locationX>551</locationX>
+        <locationY>620</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <fields>
             <name>title06</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-size: 20px;&quot;&gt;Step 6:  The Sixth Step&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Title of the Screen&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1075,19 +1114,13 @@
                 <name>s06_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator06a</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path06a</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>indicatorType</name>
-                        <value>
-                            <stringValue>Vertical</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1096,24 +1129,30 @@
                             <stringValue>Step 6</stringValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Vertical</stringValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator06b</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path06b</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>stepList</name>
+                        <value>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputParameters>
                         <name>indicatorType</name>
                         <value>
                             <stringValue>Ring</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>stepList</name>
-                        <value>
-                            <elementReference>constantSteps</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1138,13 +1177,13 @@
                 <name>s06_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>indicator06c</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path06f</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
-                        <name>stepList</name>
+                        <name>currentStep</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <stringValue>Step 6</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1154,9 +1193,9 @@
                         </value>
                     </inputParameters>
                     <inputParameters>
-                        <name>currentStep</name>
+                        <name>stepList</name>
                         <value>
-                            <stringValue>Step 6</stringValue>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1176,17 +1215,23 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>text06a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 18px; color: rgb(0, 0, 0);&quot;&gt;This is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60); font-size: 18px;&quot;&gt;Step 6 is an important step.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60); font-size: 16px;&quot;&gt;This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>indicator06d</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path06c</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>indicatorType</name>
+                        <value>
+                            <stringValue>Horizontal</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1200,8 +1245,8 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator06e</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path06d</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>indicatorType</name>
@@ -1212,7 +1257,7 @@
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1226,13 +1271,13 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>indicator06f</name>
-                    <extensionName>c:DynamicFlowProgress</extensionName>
+                    <name>path06e</name>
+                    <extensionName>dflowp:DynamicFlowProgress</extensionName>
                     <fieldType>ComponentInstance</fieldType>
                     <inputParameters>
                         <name>stepList</name>
                         <value>
-                            <elementReference>constantSteps</elementReference>
+                            <elementReference>constantPath</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1260,13 +1305,14 @@
                 <isRequired>false</isRequired>
             </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>0</locationY>
+        <locationY>50</locationY>
         <connector>
             <targetReference>s01</targetReference>
         </connector>

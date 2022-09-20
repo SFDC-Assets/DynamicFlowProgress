@@ -1,4 +1,4 @@
-<design:component label="Dynamic Flow Progress" >
+<design:component label="zDynamicFlowProgress (Old)" >
     <design:attribute name="indicatorType" label="Indicator Type" datasource="Vertical,Horizontal,Path,Bar,VertNav,Ring" description="Vertical, Horizontal, Path, Bar, NavMenu, or Ring." />
     <design:attribute name="stepList" label="Comma-Separated List of Steps" description="Example: Step 1,Step 2,Step 3. Recommend storing this in a constant." />
     <design:attribute name="currentStep" label="Current Step" description="Example: Step 1" />

@@ -1,35 +1,49 @@
-<!-- 
-Name:				DynamicFlowProgress.cmp
-Original Author:	Mitch Lynch, Salesforce (mitch.lynch@salesforce.com)
-Date:				21 Oct 2021
-Last Modified:		28 Oct 2021
-
-* History/Comments:
- - 10/28/2021 (Mitch Lynch)	-	Implemented custom labels for easy translation.
-							-	General cleanup; addition of Salesforce Labs Terms and Conditions.
-							-	Added NavMenu indicator type.
- - 10/27/2021 (Mitch Lynch)	-	Switched the horizontal path markup to use the direct SLDS markup, not the lightning:path component, for more controler over formatting; key issue was with the bug that would only recognize the first step as the current step.
-							-	Fixed formatting of success icons in horizontal indicator; now, both vertical and horizontal versions match, using the green success check icon.
- - 10/22/2021 (Mitch Lynch) -	Switched the horizontal indicator markup to use the direct SLDS markup, not the lightning:progressIndicator component, for more control over formatting; key issue was with the bug that auto-selects the first step's icon and displays that tooltip whenever a new screen is displayed.
-							-	Switched the controller to use calculated counts in order to display the horizontal progress bar and calculate completion/length.
-							-	Added support for SLDS Progress Bar and a progress ring.
- - 10/21/2021 (Mitch Lynch)	-	Initial component created.
-
-* Resources:
- - https://www.lightningdesignsystem.com/components/progress-indicator/
- - https://www.lightningdesignsystem.com/components/progress-bar/
- - https://developer.salesforce.com/docs/component-library/bundle/lightning:progressIndicator/documentation
- - https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/ref_attr_types_collection.htm
- - https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_loops_for_traditional.htm
- - https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/labels_value_provider_platform.htm
- - https://help.salesforce.com/s/articleView?id=sf.cl_translate_edit.htm&type=5
-
-* Terms and Conditions
-THIS APPLICATION IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL OR SIMILAR DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS APPLICATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED, TRANSMITTED, USED, MODIFIED, BUILT UPON, OR OTHERWISE EXPLOITED BY OR ON BEHALF OF SALESFORCE.COM OR ITS AFFILIATES, ANY CUSTOMER OR PARTNER OF SALESFORCE.COM OR ITS AFFILIATES, OR ANY DEVELOPER OF APPLICATIONS THAT INTERFACE WITH THE SALESFORCE.COM APPLICATION, FOR ANY PURPOSE, COMMERCIAL OR NON-COMMERCIAL, RELATED TO USE OF THE SALESFORCE.COM APPLICATION, AND IN ANY WAY, INCLUDING BY METHODS THAT HAVE NOT YET BEEN INVENTED OR CONCEIVED.
-
+<!--
+/*******************************************************************************************
+* @Name			DynamicFlowProgress.cmp
+* @Author		Mitch Lynch (mitch.lynch@salesforce.com)
+* @Date			10/21/2021
+* @Description	Displays six different kinds of progress indicators to use in a screen flow.
+*******************************************************************************************/
+/* MODIFICATION LOG
+*
+* 	Date			Developer			Story		Description
+*	09/13/2022		Mitch Lynch			n/a			Changed the label to "zDynamicFlowProgress (Old)" so it wouldn't confuse customers.
+*	08/03/2022		Mitch Lynch			n/a			Removed href="#" attribute from the <a> in the horizontal path indicator type to prevent link/reload behavior.
+*	10/28/2021		Mitch Lynch			n/a			Implemented custom labels for easy translation. General cleanup; addition of Salesforce Labs Terms and Conditions. Added NavMenu indicator type.
+*	10/27/2021		Mitch Lynch			n/a			Switched the horizontal path markup to use the direct SLDS markup, not the lightning:path component, for more controler over formatting; key issue was with the bug that would only recognize the first step as the current step. Fixed formatting of success icons in horizontal indicator; now, both vertical and horizontal versions match, using the green success check icon.
+*	10/22/2021		Mitch Lynch			n/a			Switched the horizontal indicator markup to use the direct SLDS markup, not the lightning:progressIndicator component, for more control over formatting; key issue was with the bug that auto-selects the first step's icon and displays that tooltip whenever a new screen is displayed. Switched the controller to use calculated counts in order to display the horizontal progress bar and calculate completion/length. Added support for SLDS Progress Bar and a progress ring.
+*	10/21/2021		Mitch Lynch			n/a			Initial component created.
+*******************************************************************************************/
+/* NOTES
+*
+*	Resources:
+*		- https://www.lightningdesignsystem.com/components/progress-indicator/
+*		- https://www.lightningdesignsystem.com/components/progress-bar/
+*		- https://developer.salesforce.com/docs/component-library/bundle/lightning:progressIndicator/documentation
+*		- https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/ref_attr_types_collection.htm
+*		- https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_loops_for_traditional.htm
+*		- https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/labels_value_provider_platform.htm
+*		- https://help.salesforce.com/s/articleView?id=sf.cl_translate_edit.htm&type=5
+*
+*	TERMS AND CONDITIONS
+*		THIS APPLICATION IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+*		INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+*		DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+*		SPECIAL, EXEMPLARY, CONSEQUENTIAL OR SIMILAR DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+*		OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+*		WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+*		THIS APPLICATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+*		SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED, TRANSMITTED, USED, MODIFIED, BUILT
+*		UPON, OR OTHERWISE EXPLOITED BY OR ON BEHALF OF SALESFORCE.COM OR ITS AFFILIATES, ANY CUSTOMER OR PARTNER OF
+*		SALESFORCE.COM OR ITS AFFILIATES, OR ANY DEVELOPER OF APPLICATIONS THAT INTERFACE WITH THE SALESFORCE.COM APPLICATION,
+*		FOR ANY PURPOSE, COMMERCIAL OR NON-COMMERCIAL, RELATED TO USE OF THE SALESFORCE.COM APPLICATION, AND IN ANY WAY,
+*		INCLUDING BY METHODS THAT HAVE NOT YET BEEN INVENTED OR CONCEIVED.
+*
+*******************************************************************************************/
 -->
+
 <aura:component implements="lightning:availableForFlowScreens" access="global">
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     
@@ -216,7 +230,7 @@ SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED
                                         <!-- if Complete -->
                                         <aura:renderIf isTrue="{!sta.status == 'Complete'}">
                                             <li class="slds-path__item slds-is-complete" role="presentation">
-                                                <a aria-selected="false" class="slds-path__link" href="#" id="path-7" role="option" tabindex="-1">
+                                                <a aria-selected="false" class="slds-path__link" id="path-7" role="option" tabindex="-1">
                                                     <span class="slds-path__stage">
                                                         <lightning:icon iconName="utility:check" variant="inverse" size="xx-small" class="slds-icon slds-icon_x-small" />
                                                         <span class="slds-assistive-text">{!$Label.c.DFP_Complete}</span>
@@ -230,7 +244,7 @@ SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED
                                         <!-- if Current -->
                                         <aura:renderIf isTrue="{!sta.status == 'Current'}">
                                             <li class="slds-path__item slds-is-current slds-is-active" role="presentation">
-                                                <a aria-selected="true" class="slds-path__link" href="#" id="path-9" role="option" tabindex="0">
+                                                <a aria-selected="true" class="slds-path__link" id="path-9" role="option" tabindex="0">
                                                     <span class="slds-path__stage">
                                                         <lightning:icon iconName="utility:check" variant="inverse" size="xx-small" class="slds-icon slds-icon_x-small" />
                                                         <span class="slds-assistive-text">{!$Label.c.DFP_Current}</span>
@@ -244,7 +258,7 @@ SUBJECT TO THE FOREGOING, THIS APPLICATION MAY BE FREELY REPRODUCED, DISTRIBUTED
                                         <!-- if Upcoming -->
                                         <aura:renderIf isTrue="{!sta.status == 'Upcoming'}">
                                             <li class="slds-path__item slds-is-incomplete" role="presentation">
-                                                <a aria-selected="false" class="slds-path__link" href="#" id="path-10" role="option" tabindex="-1">
+                                                <a aria-selected="false" class="slds-path__link" id="path-10" role="option" tabindex="-1">
                                                     <span class="slds-path__stage">
                                                         <lightning:icon iconName="utility:check" variant="inverse" size="xx-small" class="slds-icon slds-icon_x-small" />
                                                         <span class="slds-assistive-text">{!$Label.c.DFP_Upcoming}</span>

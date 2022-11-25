@@ -210,7 +210,7 @@ export default class DynamicFlowProgressLWC extends LightningElement {
                 this.progressLabel = `${this.pathProgress}% ${this.label.DFP_Complete}`;
 
                 // setting dynamic css width value for the Bar and Ring indicator types
-                document.documentElement.style.setProperty('--value', this.pathProgress);
+                //document.documentElement.style.setProperty('--value', this.pathProgress);
             }
         }
 
@@ -222,7 +222,7 @@ export default class DynamicFlowProgressLWC extends LightningElement {
             this.progressLabel = `${this.pathProgress}% ${this.label.DFP_Complete}`;
             
             // setting dynamic css width value for the Horizontal indicator type
-            document.documentElement.style.setProperty('--value', this.pathProgress);
+            //document.documentElement.style.setProperty('--value', this.pathProgress);
         }
 
         // store list of steps to iterate over in the html

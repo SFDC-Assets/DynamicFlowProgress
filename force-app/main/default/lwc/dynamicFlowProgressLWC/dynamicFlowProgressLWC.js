@@ -207,7 +207,7 @@ export default class DynamicFlowProgressLWC extends LightningElement {
                 this.pathProgress = (((countToCurrent-1)/(countTotalSteps-1)*100));
 
                 // need a label property for the Bar indicator type that shows completion like "45% Complete"
-                this.progressLabel = `${this.pathProgress}% ${this.label.DFP_Complete}`;
+                this.progressLabel = `${this.currentStepPercentage}% ${this.label.DFP_Complete}`;
 
                 // setting dynamic css width value for the Bar and Ring indicator types
                 //document.documentElement.style.setProperty('--value', this.pathProgress);

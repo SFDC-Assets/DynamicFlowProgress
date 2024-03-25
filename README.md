@@ -6,6 +6,8 @@
 
 <p align="center">This package includes an LWC component that displays 6 different kinds of progress indicators on your Flow screens, to provide your users with easy-to-understand, guided screen flows.</p>
 
+<p align="center"><strong>Please note</strong>: this is not a navigation component; it provides a visual representation of which step a user is on in a multi-step process.</p>
+
 <!-- Sections below are Optional -->
 
 ---
@@ -18,6 +20,7 @@ This component can be used on a Flow screen to indicate the steps in a flow and 
 * 6 different indicator types (see [below](https://github.com/SFDC-Assets/DynamicFlowProgress#indicator-types) for list and screenshots)
 * Override completion % value with your own flow variable (Progress Bar and Progress Ring only)
 * Additionally, it uses Custom Labels for display and assistive text, making it friendly for translation into other languages.
+* This is not a navigation component; it provides a visual representation of which step a user is on in a multi-step process.
 
 ![video01](images/dflowp_video01.gif)
 
